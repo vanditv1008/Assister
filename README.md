@@ -1,8 +1,8 @@
-# devagent — Self-Hosted Personal AI Agent & Automation Platform
+# Assister — Autonomous AI Agent & Execution Platform
 
-> **Autonomous AI Agent** — A local-first personal AI agent and execution harness that bridges your machine, terminal, messaging channels, filesystem, shell, and live web intelligence into a single self-hosted platform.
+> A local-first personal AI agent and execution harness that bridges your machine, terminal, messaging channels, filesystem, shell, and live web intelligence into a single self-hosted platform.
 
-[![Project Type: Autonomous AI Agent](https://img.shields.io/badge/Project-Autonomous_AI_Agent-teal)](#what-is-assister)
+[![Project: Autonomous AI Agent](https://img.shields.io/badge/Project-Autonomous_AI_Agent-teal)](#what-is-assister)
 [![Runtime: Bun](https://img.shields.io/badge/Runtime-Bun-black?logo=bun)](https://bun.sh/)
 [![Language: TypeScript](https://img.shields.io/badge/Language-TypeScript-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![AI Framework: Vercel AI SDK](https://img.shields.io/badge/AI-Vercel_AI_SDK-black)](https://sdk.vercel.ai/)
@@ -12,16 +12,9 @@
 
 ---
 
-## 3-Word Definition
-> **Autonomous AI Agent** (or *Self-Hosted AI Agent*)
->
-> *Use on resumes & portfolio:* **Assister** | *Autonomous AI Agent* — Built with Bun, TypeScript, Vercel AI SDK & Telegraf.
+## What is Assister?
 
----
-
-## What is assister?
-
-**assister** is not merely an inline code-completion plugin or a passive chat assistant. It is a **full-fledged, self-hosted personal AI agent and remote execution platform** designed to run directly on your workstation, homelab server, or cloud VPS.
+**Assister** is not merely an inline code-completion plugin or a passive chat assistant. It is a **full-fledged, self-hosted personal AI agent and remote execution platform** designed to run directly on your workstation, homelab server, or cloud VPS.
 
 It transforms your machine into an autonomous computing hub. With `assister`, you can issue high-level directives from your terminal using an interactive, styled TUI, or remotely from anywhere in the world using **Telegram**. 
 
