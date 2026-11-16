@@ -25,9 +25,9 @@ function printBannerWithShadow(ascii: string) {
 export async function runWakeup(){
 let ascii:string;
 try{
-    ascii=figlet.textSync("devagent",{font:BANNER_FONT});
+    ascii=figlet.textSync("assister",{font:BANNER_FONT});
 }catch(error){
-ascii=figlet.textSync("devagent",{font:"Standard"});
+ascii=figlet.textSync("assister",{font:"Standard"});
 }
 printBannerWithShadow(ascii);
 
@@ -40,7 +40,7 @@ const mode=await select({
     ],
 });
 
-if(isCancel(mode || mode==="exit")){
+if (isCancel(mode) || mode === "exit") {
 console.log(chalk.dim("\n Goodbye \n"));  
 return;
 }

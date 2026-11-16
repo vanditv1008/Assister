@@ -1,7 +1,8 @@
-# devagent — Self-Hosted Personal AI Agent & Automation Platform
+# assister — Self-Hosted Personal AI Agent & Automation Platform
 
-> An autonomous, local-first personal AI agent and execution harness that bridges your machine, terminal, messaging channels, filesystem, shell, and live web intelligence into a single self-hosted platform.
+> **Autonomous AI Agent** — A local-first personal AI agent and execution harness that bridges your machine, terminal, messaging channels, filesystem, shell, and live web intelligence into a single self-hosted platform.
 
+[![Project Type: Autonomous AI Agent](https://img.shields.io/badge/Project-Autonomous_AI_Agent-teal)](#what-is-assister)
 [![Runtime: Bun](https://img.shields.io/badge/Runtime-Bun-black?logo=bun)](https://bun.sh/)
 [![Language: TypeScript](https://img.shields.io/badge/Language-TypeScript-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![AI Framework: Vercel AI SDK](https://img.shields.io/badge/AI-Vercel_AI_SDK-black)](https://sdk.vercel.ai/)
@@ -11,24 +12,31 @@
 
 ---
 
-## What is devagent?
+## 3-Word Definition
+> **Autonomous AI Agent** (or *Self-Hosted AI Agent*)
+>
+> *Use on resumes & portfolio:* **Assister** | *Autonomous AI Agent* — Built with Bun, TypeScript, Vercel AI SDK & Telegraf.
 
-**devagent** is not merely an inline code-completion plugin or a passive chat assistant. It is a **full-fledged, self-hosted personal AI agent and remote execution platform** designed to run directly on your workstation, homelab server, or cloud VPS.
+---
 
-It transforms your machine into an autonomous computing hub. With `devagent`, you can issue high-level directives from your terminal using an interactive, styled TUI, or remotely from anywhere in the world using **Telegram**. 
+## What is assister?
 
-Once assigned a task, `devagent` autonomously plans, searches the web, navigates and analyzes your workspace, executes terminal commands, drafts multi-file code modifications, and manages complex workflows.
+**assister** is not merely an inline code-completion plugin or a passive chat assistant. It is a **full-fledged, self-hosted personal AI agent and remote execution platform** designed to run directly on your workstation, homelab server, or cloud VPS.
+
+It transforms your machine into an autonomous computing hub. With `assister`, you can issue high-level directives from your terminal using an interactive, styled TUI, or remotely from anywhere in the world using **Telegram**. 
+
+Once assigned a task, `assister` autonomously plans, searches the web, navigates and analyzes your workspace, executes terminal commands, drafts multi-file code modifications, and manages complex workflows.
 
 ### The Safety-First Core: In-Memory Virtual Overlay
 
-Most autonomous agents suffer from a critical flaw: they blindly execute destructive edits directly onto disk. `devagent` eliminates this risk by introducing an **in-memory virtual filesystem overlay**:
+Most autonomous agents suffer from a critical flaw: they blindly execute destructive edits directly onto disk. `assister` eliminates this risk by introducing an **in-memory virtual filesystem overlay**:
 - All proposed file changes, additions, and deletions are intercepted and staged in virtual memory.
 - The agent reads and iterates on its own staged changes in real time without touching your repository.
 - Nothing is applied to your actual disk until you inspect and approve a unified diff — either through interactive terminal prompts or Telegram inline buttons.
 
 ---
 
-## Why devagent? (Pros & Advantages)
+## Why assister? (Pros & Advantages)
 
 | Advantage | Why It Matters |
 | :--- | :--- |
@@ -42,16 +50,16 @@ Most autonomous agents suffer from a critical flaw: they blindly execute destruc
 
 ---
 
-## Impact Created by devagent
+## Impact Created by assister
 
 ### 1. Unchaining Developers from Their Desks
-By integrating Telegram as a first-class control interface, `devagent` frees you from your workstation. You can kick off a complex refactoring task, research an architectural problem, or execute multi-step deployment plans while commuting or away from your computer, reviewing diffs and granting execution approvals with a single tap on your phone.
+By integrating Telegram as a first-class control interface, `assister` frees you from your workstation. You can kick off a complex refactoring task, research an architectural problem, or execute multi-step deployment plans while commuting or away from your computer, reviewing diffs and granting execution approvals with a single tap on your phone.
 
 ### 2. Eliminating "Agent Anxiety"
-Developers often hesitate to give autonomous agents write permissions for fear of corrupted files, lost work, or broken git histories. `devagent`'s virtual overlay isolates all actions until explicit human sign-off, making autonomous agents practical and safe for production codebases.
+Developers often hesitate to give autonomous agents write permissions for fear of corrupted files, lost work, or broken git histories. `assister`'s virtual overlay isolates all actions until explicit human sign-off, making autonomous agents practical and safe for production codebases.
 
 ### 3. Bridging Local System Power with Web Context
-Unlike web-based AI platforms that lack access to your local environment, or isolated CLI tools that lack broader web awareness, `devagent` unites both: it can scrape the latest library documentation from the internet, search for solutions, and immediately apply the exact changes to your local project files.
+Unlike web-based AI platforms that lack access to your local environment, or isolated CLI tools that lack broader web awareness, `assister` unites both: it can scrape the latest library documentation from the internet, search for solutions, and immediately apply the exact changes to your local project files.
 
 ---
 
@@ -108,7 +116,7 @@ flowchart TD
 
 ## Operating Modes
 
-`devagent` features three distinct cognitive modes, accessible from both the CLI and Telegram:
+`assister` features three distinct cognitive modes, accessible from both the CLI and Telegram:
 
 ### 1. Agent Mode (Autonomous Problem Solver)
 For end-to-end task execution, bug investigation, and feature building.
@@ -188,77 +196,134 @@ Turn your machine or server into a 24/7 personal assistant reachable from any de
 
 ---
 
-## Getting Started
+## Getting Started: Running on Your Own Computer
 
-### Prerequisites
+Follow these simple steps to run `assister` locally on your machine:
 
-1. **[Bun](https://bun.sh/)** installed on your system:
+### Step 1: Install Prerequisites
+
+1. **Install [Bun](https://bun.sh/)** (runtime & package manager):
    ```bash
    # macOS / Linux
    curl -fsSL https://bun.sh/install | bash
 
-   # Windows PowerShell
+   # Windows (PowerShell)
    powershell -c "irm bun.sh/install.ps1 | iex"
    ```
-2. An **[OpenRouter](https://openrouter.ai/)** API key.
-3. *(Optional)* A **[Firecrawl](https://firecrawl.dev/)** API key for web search and scraping.
-4. *(Optional)* A **Telegram Bot Token** (from [@BotFather](https://t.me/BotFather)) and your **Telegram User ID** (from [@userinfobot](https://t.me/userinfobot)) for remote Telegram control.
+2. **Get an [OpenRouter](https://openrouter.ai/keys) API Key** (required for model inference).
+3. *(Optional)* A **[Firecrawl](https://firecrawl.dev/)** key for web search/crawling.
+4. *(Optional)* A Telegram Bot Token from [@BotFather](https://t.me/BotFather) and your User ID from [@userinfobot](https://t.me/userinfobot) (for Telegram remote control).
 
-### Installation
+---
 
-Clone the repository and install dependencies using Bun:
+### Step 2: Clone & Install Dependencies
 
 ```bash
 git clone <repository-url>
-cd devagent
+cd assister
 bun install
 ```
 
-### Environment Configuration
+---
 
-Create a `.env` file in the project root:
+### Step 3: Configure Environment Variables
+
+Create a `.env` file in the project folder (or copy from `.env.example`):
+
+```bash
+cp .env.example .env
+```
+
+Add your keys inside `.env`:
 
 ```env
-# Required: LLM Provider Key
+# Required: OpenRouter API Key
 OPENROUTER_API_KEY=your_openrouter_api_key
 
 # Optional: Default model (defaults to openrouter/free if omitted)
 OPENROUTER_DEFAULT_MODEL=anthropic/claude-3.5-sonnet
 
-# Optional: Web Research & Crawling
+# Optional: Live Web Search & Scraping
 FIRECRAWL_API_KEY=your_firecrawl_api_key
 
-# Optional: Remote Telegram Control
+# Optional: Telegram Remote Control
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 TELEGRAM_OWNER_ID=your_telegram_numeric_user_id
 
-# Optional: Custom Skill Directories (separated by semicolons or colons)
-SKILLS_DIRS=./skills;D:/my-custom-skills
+# Optional: Custom Skill Directories
+SKILLS_DIRS=./skills
 ```
 
-#### Environment Variables Reference
+---
 
-| Variable | Required | Description |
-| :--- | :---: | :--- |
-| `OPENROUTER_API_KEY` | **Yes** | Authenticates model inference requests via OpenRouter. |
-| `OPENROUTER_DEFAULT_MODEL` | No | Model ID to use (e.g., `anthropic/claude-3.5-sonnet`, `openai/gpt-4o`). |
-| `FIRECRAWL_API_KEY` | No | Enables live web search and webpage crawling. |
-| `TELEGRAM_BOT_TOKEN` | No | Connects the remote Telegram bot controller. |
-| `TELEGRAM_OWNER_ID` | No | Restricts Telegram bot execution exclusively to your user ID. |
-| `SKILLS_DIRS` | No | Paths to directories containing custom `SKILL.md` skill files. |
+### Step-by-Step: Setting Up Telegram Remote Control
+
+Setting up Telegram takes less than 2 minutes and turns `assister` into a remote control center on your phone:
+
+#### 1. Get your Telegram Bot Token
+1. Open Telegram and search for **[@BotFather](https://t.me/BotFather)** (the official Telegram bot creator).
+2. Send the command:
+   ```text
+   /newbot
+   ```
+3. Follow the prompts:
+   - Enter a display name for your bot (e.g. `My Assister`).
+   - Enter a unique username ending in `bot` (e.g. `my_assister_agent_bot`).
+4. BotFather will reply with your API token (looks like `7123456789:AAHxyz_ExampleTokenABC123`).
+5. Copy this token and paste it into `.env`:
+   ```env
+   TELEGRAM_BOT_TOKEN=7123456789:AAHxyz_ExampleTokenABC123
+   ```
+
+#### 2. Get your Numeric Telegram User ID
+`assister` requires your numeric ID to lock the bot to **your account only** so no one else can execute commands on your machine:
+1. Open Telegram and search for **[@userinfobot](https://t.me/userinfobot)**.
+2. Press **Start** (or send any message).
+3. The bot will reply with your account details:
+   ```text
+   Id: 123456789
+   First: YourName
+   ```
+4. Copy the numeric **`Id`** and paste it into `.env`:
+   ```env
+   TELEGRAM_OWNER_ID=123456789
+   ```
+
+#### 3. Test your Connection
+1. Launch `assister` and pick **Telegram**:
+   ```bash
+   bun run index.ts wakeup
+   ```
+2. `assister` will immediately send a welcome message to your Telegram chat. You can now command your machine from anywhere!
+
+---
+
+### Step 4: Run assister
+
+Start the interactive wakeup menu directly:
+
+```bash
+bun run index.ts wakeup
+```
+
+> **Tip — Use `assister` from any folder:**
+> Run `bun link` in this directory once. After that, you can open any codebase on your computer and simply type:
+> ```bash
+> assister wakeup
+> ```
 
 ---
 
 ## How to Start & Use
 
-### 1. Launching devagent
+### 1. Launching assister
 
 Start the application using the wakeup command:
 
 ```bash
 bun run index.ts wakeup
 # or if globally linked:
-devagent wakeup
+assister wakeup
 ```
 
 The system displays the styled banner and prompts you to select your interface:
@@ -292,7 +357,7 @@ Unified Diff Review:
 
 ### 3. Remote Telegram Walkthrough
 
-1. Run `devagent wakeup` and choose **Telegram**.
+1. Run `assister wakeup` and choose **Telegram**.
 2. Open Telegram on your phone and send:
    ```text
    /plan Add Docker and Docker Compose support for production deployment
@@ -347,7 +412,7 @@ Running an agent on your local machine requires thoughtful security safeguards:
 ## Project Structure
 
 ```text
-devagent/
+assister/
 ├── ai/
 │   ├── ai.config.ts         # OpenRouter provider configuration & environment loader
 │   └── index.ts             # AI module exports
@@ -381,7 +446,7 @@ devagent/
 ├── tui/
 │   ├── terminal-md.ts        # Styled terminal Markdown renderer
 │   └── wakeup.ts             # Figlet shadow banner and interface picker
-├── index.ts                  # CLI entrypoint (`devagent wakeup`)
+├── index.ts                  # CLI entrypoint (`assister wakeup`)
 ├── package.json              # Package manifest and dependency tree
 ├── tsconfig.json             # TypeScript compiler configuration
 └── README.md                 # Project documentation

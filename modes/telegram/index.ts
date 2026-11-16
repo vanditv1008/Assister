@@ -1,17 +1,21 @@
 import { Telegraf } from "telegraf";
 import chalk from "chalk";
 import { WELCOME } from "./constants";
-import { resolve } from "node:dns";
 import { registerHandlers } from "./handlers";
 
 export async function runTelegramMode() {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const ownerId = process.env.TELEGRAM_OWNER_ID;
 
-  const bot = new Telegraf(token!);
-  registerHandlers(bot)
+  if (!token || !ownerId) {
+    console.log(chalk.red("\nError: Missing TELEGRAM_BOT_TOKEN or TELEGRAM_OWNER_ID in .env file.\n"));
+    return;
+  }
 
-  await bot.telegram.sendMessage(ownerId!, WELCOME, { parse_mode: "Markdown" });
+  const bot = new Telegraf(token);
+  registerHandlers(bot);
+
+  await bot.telegram.sendMessage(ownerId, WELCOME, { parse_mode: "Markdown" });
   console.log(chalk.green("Sent welcome message to Telegram.\n"));
 
   bot.launch();

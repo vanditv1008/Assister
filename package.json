@@ -1,10 +1,10 @@
 {
-  "name": "devagent",
+  "name": "assister",
   "module": "index.ts",
   "type": "module",
   "private": true,
   "bin": {
-    "devagent": "./index.ts"
+    "assister": "./index.ts"
   },
   "scripts": {
     "typecheck": "bun check"

@@ -15,7 +15,7 @@ export function getAgentModel() {
 
   if (!apiKey) {
     throw new Error(
-      "Missing OPENROUTER_API_KEY. Please define OPENROUTER_API_KEY in the .env file in the devagent project folder."
+      "Missing OPENROUTER_API_KEY. Please define OPENROUTER_API_KEY in the .env file in the assister project folder."
     );
   }
 
