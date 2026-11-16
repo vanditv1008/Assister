@@ -1,4 +1,4 @@
-# assister — Self-Hosted Personal AI Agent & Automation Platform
+# devagent — Self-Hosted Personal AI Agent & Automation Platform
 
 > **Autonomous AI Agent** — A local-first personal AI agent and execution harness that bridges your machine, terminal, messaging channels, filesystem, shell, and live web intelligence into a single self-hosted platform.
 
