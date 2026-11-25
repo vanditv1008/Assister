@@ -8,6 +8,9 @@ import { runPlanMode } from "./plan/orchestrator";
 
 export async function runCliMode() {
   while (true) {
+    if (process.stdin.isTTY) {
+      process.stdin.resume();
+    }
     const mode = await select({
       message: "Choose CLI sub-mode",
       options: [

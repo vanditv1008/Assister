@@ -4,7 +4,8 @@
   "type": "module",
   "private": true,
   "bin": {
-    "assister": "./index.ts"
+    "assister": "./index.ts",
+    "devagent": "./index.ts"
   },
   "scripts": {
     "typecheck": "bun check"

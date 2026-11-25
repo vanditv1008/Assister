@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import chalk from "chalk";
 import { confirm, isCancel, text } from "@clack/prompts";
 import { ToolLoopAgent, stepCountIs, tool } from "ai";
@@ -7,7 +9,6 @@ import { ActionTracker } from "../agent/actiontracker.ts";
 import { ToolExecutor } from "../agent/tool-executor.ts";
 import { defaultAgentConfig } from "../agent/types.ts";
 import { renderTerminalMarkdown } from "../../tui/terminal-md.ts";
-import { runApprovalFlow } from "../agent/approval.ts";
 import { createWebTools } from "../plan/webtools.ts";
 
 
@@ -120,25 +121,29 @@ export async function runAskMode(){
   }
 
   const filename = await text({
-    message:"Filename",
-    initialValue:"ask.md",
-     validate: (v) => {
+    message: "Filename",
+    placeholder: "ask.md",
+    defaultValue: "ask.md",
+    validate: (v) => {
       const s = (v ?? '').trim();
       if (!s) return 'Required';
       if (s.includes('..') || s.includes('/') || s.includes('\\')) return 'No paths';
       if (!s.toLowerCase().endsWith('.md')) return 'Must end with .md';
     },
-  })
+  });
 
-  if(isCancel(filename)){ 
+  if (isCancel(filename)) { 
     return;
   }
-//file saved as md and we send questions and answer of ai are saved in this file
-  executor.createFile(filename , asMd(question , answer));
-  const ok = await runApprovalFlow(tracker);
-  if(!ok) return executor.clearStaging();
 
-  executor.applyApprovedFromTracker();
-  executor.clearStaging();
-
-    }
+  const targetName = filename.trim();
+  const filePath = path.resolve(process.cwd(), targetName);
+  try {
+    fs.writeFileSync(filePath, asMd(question, answer), "utf8");
+    console.log(chalk.green(`\n✓ Saved answer to ${targetName}\n`));
+  } catch (err) {
+    console.log(
+      chalk.red(`\nFailed to save file: ${err instanceof Error ? err.message : String(err)}\n`)
+    );
+  }
+}
